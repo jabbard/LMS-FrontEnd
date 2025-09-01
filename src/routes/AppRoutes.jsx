@@ -2,9 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import {
   HomePage,
-  ReviewsPage,
-  DashboardPage,
-  EditBookPage,
+  SignUpPage,
+  LoginPage
 } from "../pages/index";
 import DefaultLayout from "../components/layouts/DefaultLayout";
 
@@ -12,18 +11,11 @@ const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        {/* public pages */}
-        <Route
-          path="/"
-          element={
-            <DefaultLayout>
-              <HomePage />
-            </DefaultLayout>
-          }
-        />
-
-        {/* private pages */}
-        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/" element={<DefaultLayout/>}>
+          <Route index element={<HomePage />} />
+          <Route path="/signup" element={<SignUpPage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+        </Route>
       </Routes>
     </div>
   );
