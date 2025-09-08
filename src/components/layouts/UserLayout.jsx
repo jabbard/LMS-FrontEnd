@@ -4,10 +4,12 @@ import Footer from './Footer'
 import { Outlet } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap';
 import { Sidebar } from './Sidebar';
+import { AuthRoute } from '../auth/AuthRoute';
 
 const UserLayout = () => {
   return (
     <div>
+      <AuthRoute>
         <Header />
         <Container fluid>
           <Row className="vh-100">
@@ -27,6 +29,7 @@ const UserLayout = () => {
           </Row>
         </Container>
         <Footer />
+      </AuthRoute>
     </div>
   )
 }
